@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList.jsx';
+import GalleryItem from '../GalleryItem/GalleryItem.jsx';
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
         </header>
         <GalleryList />
         <img src="images/goat_small.jpg"/>
+        <GalleryItem />
       </div>
     );
 }
