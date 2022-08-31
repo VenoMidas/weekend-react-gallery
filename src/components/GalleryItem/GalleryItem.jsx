@@ -1,7 +1,6 @@
 import React from 'react'; // import react
 import './GalleryItem.css'; // import the css file
 
-
 /**
  * 
  * @param {Objext} galleryObject - is for the object to be displayed 

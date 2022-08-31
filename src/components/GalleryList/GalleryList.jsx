@@ -12,11 +12,13 @@ function GalleryList({ galleryArray }) {
     return (
         <ul>
             {
+                // map array items
                 galleryArray.map((galleryObject) => {
+                    // Insert GalleryItem component and pass galleryObject props
                     return <GalleryItem galleryObject={galleryObject} />
 
                 })
-            }
+            };
         </ul>
     );
 };
