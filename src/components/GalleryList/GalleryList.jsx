@@ -2,7 +2,6 @@ import React from 'react'; // import react
 import './GalleryList.css'; // import GalleryList css
 import GalleryItem from '../GalleryItem/GalleryItem.jsx'; // import GalleryItem component
 
-
 /**
  * 
  * @param {Object[]} galleryArray - Is for the array of gallery objects 
@@ -15,8 +14,7 @@ function GalleryList({ galleryArray }) {
                 // map array items
                 galleryArray.map((galleryObject) => {
                     // Insert GalleryItem component and pass galleryObject props
-                    return <GalleryItem galleryObject={galleryObject} />
-
+                    return <GalleryItem key={galleryObject.id} galleryObject={galleryObject} />
                 })
             };
         </ul>

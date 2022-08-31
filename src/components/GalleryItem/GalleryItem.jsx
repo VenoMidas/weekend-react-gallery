@@ -8,7 +8,7 @@ import './GalleryItem.css'; // import the css file
  */
 function GalleryItem({ galleryObject }) {
     return (
-        <li key={galleryObject.id}>ID: {galleryObject.id}, Title: {galleryObject.title}, Description: {galleryObject.description} <img src={galleryObject.path} /></li>
+        <li>ID: {galleryObject.id}, Title: {galleryObject.title}, Description: {galleryObject.description} <img src={galleryObject.path} /></li>
     );
 };
 

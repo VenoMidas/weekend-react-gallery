@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* Insert Header comonent */}
+      {/* Insert Header component */}
       <Header />
       {/* Insert GalleryList component and pass galleryArray props */}
       <GalleryList galleryArray={galleryArray} />
