@@ -32,14 +32,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList />
-        <ul>
-          {
-            galleryArray.map((galleryObject) => {
-              return <li key={galleryObject.id}>ID: {galleryObject.id}, Title: {galleryObject.title}, Description: {galleryObject.description} <img src={galleryObject.path}/></li>
-            })
-          }
-        </ul>
+        <GalleryList galleryArray={galleryArray} />
         <GalleryItem />
       </div>
     );

@@ -1,11 +1,15 @@
 import React from 'react';
 import './GalleryList.css';
 
-function GalleryList() {
+function GalleryList({ galleryArray }) {
     return (
-        <div>
-            <h2 className="galleryListTest">Gallery List</h2>
-        </div>
+        <ul>
+            {
+                galleryArray.map((galleryObject) => {
+                    return <li key={galleryObject.id}>ID: {galleryObject.id}, Title: {galleryObject.title}, Description: {galleryObject.description} <img src={galleryObject.path} /></li>
+                })
+            }
+        </ul>
     );
 };
 
