@@ -1,12 +1,16 @@
-import React from 'react';
-import './GalleryItem.css';
+import React from 'react'; // import react
+import './GalleryItem.css'; // import the css file
 
-function GalleryItem() {
+
+/**
+ * 
+ * @param {Objext} galleryObject - is for the object to be displayed 
+ * @returns a gallery item to display on the DOM
+ */
+function GalleryItem({ galleryObject }) {
     return (
-        <div>
-            <h2 className="galleryItemTest">Gallery Item</h2>
-        </div>
+        <li key={galleryObject.id}>ID: {galleryObject.id}, Title: {galleryObject.title}, Description: {galleryObject.description} <img src={galleryObject.path} /></li>
     );
 };
 
-export default GalleryItem;
+export default GalleryItem; // export component

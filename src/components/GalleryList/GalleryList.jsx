@@ -1,16 +1,24 @@
-import React from 'react';
-import './GalleryList.css';
+import React from 'react'; // import react
+import './GalleryList.css'; // import GalleryList css
+import GalleryItem from '../GalleryItem/GalleryItem.jsx'; // import GalleryItem component
 
+
+/**
+ * 
+ * @param {Object[]} galleryArray - Is for the array of gallery objects 
+ * @returns the mapped list of gallery objects on the DOM
+ */
 function GalleryList({ galleryArray }) {
     return (
         <ul>
             {
                 galleryArray.map((galleryObject) => {
-                    return <li key={galleryObject.id}>ID: {galleryObject.id}, Title: {galleryObject.title}, Description: {galleryObject.description} <img src={galleryObject.path} /></li>
+                    return <GalleryItem galleryObject={galleryObject} />
+
                 })
             }
         </ul>
     );
 };
 
-export default GalleryList;
+export default GalleryList; // export the component

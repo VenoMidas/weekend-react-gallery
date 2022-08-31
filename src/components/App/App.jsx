@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import GalleryList from '../GalleryList/GalleryList.jsx';
-import GalleryItem from '../GalleryItem/GalleryItem.jsx';
-import Axios from 'axios';
+import React, { useEffect, useState } from 'react'; // import react and use's
+import './App.css'; // import app.css file
+import GalleryList from '../GalleryList/GalleryList.jsx'; //import GalleryList component
+import Axios from 'axios'; //import axios for server routes
 
 function App() {
   // getters and setters
@@ -14,6 +13,10 @@ function App() {
     getGallery();
   });
 
+  /**
+   * GET /gallery data
+   * setGalleryArray with gallery data
+   */
   const getGallery = () => {
     Axios({
       method: 'GET',
@@ -27,15 +30,15 @@ function App() {
     });
   };
 
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-        <GalleryList galleryArray={galleryArray} />
-        <GalleryItem />
-      </div>
-    );
-}
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1 className="App-title">Gallery of My Life</h1>
+      </header>
+      {/* Insert GalleryList component and pass galleryArray props */}
+      <GalleryList galleryArray={galleryArray} />
+    </div>
+  );
+};
 
 export default App;
