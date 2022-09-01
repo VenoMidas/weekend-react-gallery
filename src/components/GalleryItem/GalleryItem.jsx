@@ -11,18 +11,22 @@ function GalleryItem({ galleryObject }) {
     const [toggle, setToggle] = useState(false);
 
     return (
-        // clicking on the list item changes the toggle value, which then changes the displayed content
-        <li onClick={() => setToggle(!toggle)}>
-            {
-                toggle ? (
-                    // if toggle = true display description
-                    <p>{galleryObject.description}</p>
-                ) : (
-                    // if toggle = false display image
-                    <img src={galleryObject.path} />
-                )
-            }
-        </li>
+        <div>
+            {/* clicking on the list item changes the toggle value, which then changes the displayed content */}
+            <li onClick={() => setToggle(!toggle)}>
+                {
+                    toggle ? (
+                        // if toggle = true display description
+                        <p>{galleryObject.description}</p>
+                    ) : (
+                        // if toggle = false display image
+                        <img src={galleryObject.path} />
+                    )
+                }
+            </li>
+            <button>Like!</button>
+            <p>{galleryObject.likes} people like this!</p>
+        </div>
     );
 };
 
