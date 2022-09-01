@@ -1,4 +1,4 @@
-import React from 'react'; // import react
+import React, { useState, useEffect } from 'react'; // import react
 import './GalleryItem.css'; // import the css file
 
 /**
@@ -7,8 +7,22 @@ import './GalleryItem.css'; // import the css file
  * @returns a gallery item to display on the DOM
  */
 function GalleryItem({ galleryObject }) {
+    // setter and getter for toggle
+    const [toggle, setToggle] = useState(false);
+
     return (
-        <li>ID: {galleryObject.id}, Title: {galleryObject.title}, Description: {galleryObject.description} <img src={galleryObject.path} /></li>
+        // clicking on the list item changes the toggle value, which then changes the displayed content
+        <li onClick={() => setToggle(!toggle)}>
+            {
+                toggle ? (
+                    // if toggle = true display description
+                    <p>{galleryObject.description}</p>
+                ) : (
+                    // if toggle = false display image
+                    <img src={galleryObject.path} />
+                )
+            }
+        </li>
     );
 };
 
