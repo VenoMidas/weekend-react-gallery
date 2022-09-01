@@ -48,8 +48,8 @@ To practice passing values through `props` in React, you will build the gallery 
     - [X] Update the `GalleryList` to use this component to display an image.
     - [X] Swap the image with the description on click. Use [conditional rendering](https://reactjs.org/docs/conditional-rendering.html).
     - [X] Display the number likes for each item and include a like button.
-    - [ ] When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
-    - [ ] Update the gallery each time a like button is clicked.
+    - [X] When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
+    - [X] Update the gallery each time a like button is clicked.
 
 ## STRETCH GOALS
 
