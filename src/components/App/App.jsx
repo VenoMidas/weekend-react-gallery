@@ -31,12 +31,24 @@ function App() {
     });
   };
 
+  const likeGalleryObject = (galleryItemId) => {
+    Axios({
+      method: 'PUT',
+      url: `/gallery/like/${galleryItemId}`,
+    }).then((response) => {
+      getGallery();
+    }).catch((error) => {
+      console.log(error);
+      alert('Something went wrong');
+    });
+  };
+
   return (
     <div className="App">
       {/* Insert Header component */}
       <Header />
       {/* Insert GalleryList component and pass galleryArray props */}
-      <GalleryList galleryArray={galleryArray} />
+      <GalleryList galleryArray={galleryArray} likeGalleryObject={likeGalleryObject} />
     </div>
   );
 };

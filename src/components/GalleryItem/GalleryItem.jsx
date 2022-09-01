@@ -6,7 +6,7 @@ import './GalleryItem.css'; // import the css file
  * @param {Objext} galleryObject - is for the object to be displayed 
  * @returns a gallery item to display on the DOM
  */
-function GalleryItem({ galleryObject }) {
+function GalleryItem({ galleryObject, likeGalleryObject }) {
     // setter and getter for toggle
     const [toggle, setToggle] = useState(false);
 
@@ -24,7 +24,7 @@ function GalleryItem({ galleryObject }) {
                     )
                 }
             </li>
-            <button>Like!</button>
+            <button onClick={() => likeGalleryObject(galleryObject.id)} >Like!</button>
             <p>{galleryObject.likes} people like this!</p>
         </div>
     );
