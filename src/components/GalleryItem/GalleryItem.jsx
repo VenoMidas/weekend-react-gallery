@@ -3,7 +3,7 @@ import './GalleryItem.css'; // import the css file
 
 /**
  * 
- * @param {Objext} galleryObject - is for the object to be displayed 
+ * @param {Object} galleryObject - is for the object to be displayed 
  * @returns a gallery item to display on the DOM
  */
 function GalleryItem({ galleryObject, likeGalleryObject }) {

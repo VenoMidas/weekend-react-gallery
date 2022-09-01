@@ -12,7 +12,11 @@ function App() {
   useEffect(() => {
     // console.log('in useEffect');
     getGallery();
-  });
+  }, []);
+
+  useEffect(() => {
+    console.log('galleryArray has changed');
+  }, [galleryArray]);
 
   /**
    * GET /gallery data
