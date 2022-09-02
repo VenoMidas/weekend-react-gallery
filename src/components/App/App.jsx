@@ -3,6 +3,7 @@ import './App.css'; // import app.css file
 import GalleryList from '../GalleryList/GalleryList.jsx'; //import GalleryList component
 import Header from '../Header/Header'; // import Header component
 import Axios from 'axios'; //import axios for server routes
+import Container from '@mui/material/Container';
 
 function App() {
   // getters and setters
@@ -13,10 +14,6 @@ function App() {
     // console.log('in useEffect');
     getGallery();
   }, []);
-
-  useEffect(() => {
-    console.log('galleryArray has changed');
-  }, [galleryArray]);
 
   /**
    * GET /gallery data
@@ -48,12 +45,12 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <Container className="App">
       {/* Insert Header component */}
       <Header />
       {/* Insert GalleryList component and pass galleryArray props */}
       <GalleryList galleryArray={galleryArray} likeGalleryObject={likeGalleryObject} />
-    </div>
+    </Container>
   );
 };
 
