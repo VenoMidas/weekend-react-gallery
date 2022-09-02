@@ -1,6 +1,7 @@
 import React from 'react'; // import react
 import './GalleryList.css'; // import GalleryList css
 import GalleryItem from '../GalleryItem/GalleryItem.jsx'; // import GalleryItem component
+import Grid from '@mui/material/Grid';
 
 /**
  * 
@@ -9,7 +10,10 @@ import GalleryItem from '../GalleryItem/GalleryItem.jsx'; // import GalleryItem 
  */
 function GalleryList({ galleryArray, likeGalleryObject }) {
     return (
-        <ul>
+        <Grid
+            container
+            spacing={2}
+        >
             {
                 // map array items
                 galleryArray.map((galleryObject) => {
@@ -17,7 +21,7 @@ function GalleryList({ galleryArray, likeGalleryObject }) {
                     return <GalleryItem key={galleryObject.id} galleryObject={galleryObject} likeGalleryObject={likeGalleryObject} />
                 })
             }
-        </ul>
+        </Grid>
     );
 };
 
