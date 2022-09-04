@@ -13,7 +13,7 @@ router.put('/like/:id', (req, res) => {
     pool.query(queryText, [galleryId]).then((results) => {
         res.sendStatus(200);
     }).catch((error) => {
-        console.log('Error in PUT likes');
+        console.log(error);
         res.sendStatus(500);
     });
     // for (const galleryItem of galleryItems) {
@@ -34,5 +34,17 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     });
 }); // END GET Route
+
+// DELETE Route
+router.delete('/:id', (req, res) => {
+    const galleryId = req.params.id;
+    const queryText = 'DELETE from "gallery" WHERE "id" = $1;';
+    pool.query(queryText, [galleryId]).then((results) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log(error)
+        res.sendStatus(500);
+    });
+});
 
 module.exports = router;
