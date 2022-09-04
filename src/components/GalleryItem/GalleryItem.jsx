@@ -7,6 +7,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 /**
  * 
@@ -20,9 +22,10 @@ function GalleryItem({ galleryObject, likeGalleryObject }) {
     return (
         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
             {/* clicking on the list item changes the toggle value, which then changes the displayed content */}
-            <Card elevation="3">
-                <CardContent
+            <Card sx={{ borderRadius: '10%' }} elevation="3">
+                <div
                     onClick={() => setToggle(!toggle)}
+                    className="cardContent"
                 >
                     {
                         toggle ? (
@@ -40,9 +43,12 @@ function GalleryItem({ galleryObject, likeGalleryObject }) {
                             // <img src={galleryObject.path} />
                         )
                     }
-                </CardContent>
-                <button onClick={() => likeGalleryObject(galleryObject.id)} >Like!</button>
-                <p>{galleryObject.likes} people like this!</p>
+                </div>
+                <CardActions disableSpacing className='cardAction'>
+                    <ThumbUpIcon className='thumbUpIcon' onClick={() => likeGalleryObject(galleryObject.id)}></ThumbUpIcon>
+                    <Typography className='likeCount'>{galleryObject.likes} people like this!</Typography>
+                    <DeleteForeverIcon className='deleteForever' ></DeleteForeverIcon>
+                </CardActions>
             </Card>
         </Grid>
     );
