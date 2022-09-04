@@ -3,9 +3,7 @@ import './GalleryItem.css'; // import the css file
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
@@ -15,7 +13,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
  * @param {Object} galleryObject - is for the object to be displayed 
  * @returns a gallery item to display on the DOM
  */
-function GalleryItem({ galleryObject, likeGalleryObject }) {
+function GalleryItem({ galleryObject, likeGalleryObject, deleteGalleryItem }) {
     // setter and getter for toggle
     const [toggle, setToggle] = useState(false);
 
@@ -47,7 +45,7 @@ function GalleryItem({ galleryObject, likeGalleryObject }) {
                 <CardActions disableSpacing className='cardAction'>
                     <ThumbUpIcon className='thumbUpIcon' onClick={() => likeGalleryObject(galleryObject.id)}></ThumbUpIcon>
                     <Typography className='likeCount'>{galleryObject.likes} people like this!</Typography>
-                    <DeleteForeverIcon className='deleteForever' ></DeleteForeverIcon>
+                    <DeleteForeverIcon className='deleteForever' onClick={() => deleteGalleryItem(galleryObject.id)}></DeleteForeverIcon>
                 </CardActions>
             </Card>
         </Grid>

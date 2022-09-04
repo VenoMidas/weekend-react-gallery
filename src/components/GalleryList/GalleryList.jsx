@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid';
  * @param {Object[]} galleryArray - Is for the array of gallery objects 
  * @returns the mapped list of gallery objects on the DOM
  */
-function GalleryList({ galleryArray, likeGalleryObject }) {
+function GalleryList({ galleryArray, likeGalleryObject, deleteGalleryItem }) {
     return (
         <Grid
             container
@@ -18,7 +18,7 @@ function GalleryList({ galleryArray, likeGalleryObject }) {
                 // map array items
                 galleryArray.map((galleryObject) => {
                     // Insert GalleryItem component and pass galleryObject props
-                    return <GalleryItem key={galleryObject.id} galleryObject={galleryObject} likeGalleryObject={likeGalleryObject} />
+                    return <GalleryItem key={galleryObject.id} deleteGalleryItem={deleteGalleryItem} galleryObject={galleryObject} likeGalleryObject={likeGalleryObject} />
                 })
             }
         </Grid>

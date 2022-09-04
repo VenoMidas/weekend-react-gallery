@@ -44,12 +44,24 @@ function App() {
     });
   };
 
+  const deleteGalleryItem = (galleryItemId) => {
+    Axios({
+      method: 'DELETE',
+      url: `/gallery/${galleryItemId}`,
+    }).then((response) => {
+      getGallery();
+    }).catch((error) => {
+      console.log(error);
+      alert('Something went wrong');
+    });
+  };
+
   return (
     <Container className="App">
       {/* Insert Header component */}
       <Header />
       {/* Insert GalleryList component and pass galleryArray props */}
-      <GalleryList galleryArray={galleryArray} likeGalleryObject={likeGalleryObject} />
+      <GalleryList deleteGalleryItem={deleteGalleryItem} galleryArray={galleryArray} likeGalleryObject={likeGalleryObject} />
     </Container>
   );
 };
