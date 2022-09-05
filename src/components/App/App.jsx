@@ -60,6 +60,18 @@ function App() {
     <Container className="App">
       {/* Insert Header component */}
       <Header />
+      <form>
+        <label htmlFor="title">Title</label>
+        <input required id="title" type="text" />
+
+        <label htmlFor="description">Description</label>
+        <input required id='description' type="text" />
+
+        <label htmlFor="path">Image URL</label>
+        <input required id='path' type="text" />
+
+        <button type='submit'>Submit</button>
+      </form>
       {/* Insert GalleryList component and pass galleryArray props */}
       <GalleryList deleteGalleryItem={deleteGalleryItem} galleryArray={galleryArray} likeGalleryObject={likeGalleryObject} />
     </Container>
