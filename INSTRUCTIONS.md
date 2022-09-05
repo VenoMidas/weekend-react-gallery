@@ -77,4 +77,4 @@ For each `feature` of your application, make a branch, work on the branch, and t
 - [ ] Deploy to heroku
 - [ ] Add deployed link after completion
 - [ ] Add screenshot image
-- [ ] Add license
+- [X] Add license
