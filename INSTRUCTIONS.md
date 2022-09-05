@@ -64,9 +64,9 @@ For each `feature` of your application, make a branch, work on the branch, and t
 - [X] Move the data into a database (postgresql)
     - [X] name your database `react_gallery`
     - [X] include a `database.sql` file documenting your database tables
-- Add a form (new **component**) that allows a user to POST a new gallery item
-  - Client side form (use absolute URL for images)
-  - Server side route for posting an image
+- [X] Add a form (new **component**) that allows a user to POST a new gallery item
+  - [X] Client side form (use absolute URL for images)
+  - [X] Server side route for posting an image
 - [X] Ability to delete a gallery item
 - [X] Add styling with Material-UI [https://material-ui.com/](https://material-ui.com/)
 - Use [multer](https://github.com/expressjs/multer) for image upload 
