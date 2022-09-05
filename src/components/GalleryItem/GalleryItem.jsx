@@ -22,7 +22,7 @@ function GalleryItem({ galleryObject, likeGalleryObject, deleteGalleryItem }) {
     // returns content to be displayed on DOM
     return (
         // Grid item with variable item sizes based on breakpoints
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
+        <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
             {/* Card element with some border radius and elevation */}
             <Card sx={{ borderRadius: '10%' }} elevation={3}>
                 {/* clicking on the div changes the toggle value, which then changes the displayed content */}
@@ -40,7 +40,7 @@ function GalleryItem({ galleryObject, likeGalleryObject, deleteGalleryItem }) {
                             // if toggle = false display image
                             <CardMedia
                                 component="img"
-                                height="200"
+                                height="300"
                                 image={galleryObject.path}
                             />
                         )
