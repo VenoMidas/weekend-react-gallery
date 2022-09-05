@@ -1,6 +1,3 @@
-<!-- Badges -->
-![image](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
-
 # React Gallery
 
 ## Description
@@ -9,11 +6,9 @@ _Duration: 2 Weeks_
 
 A gallery to display images of my life!
 
-[Deployed version of app]( ) until Heroku stops hosting November 28,2022
-
 ## Screenshot
 
-![Screenshot]()
+![Screenshot](public/images/reactGalleryScreenshot.png)
 
 ### Prerequisites
 
