@@ -72,3 +72,9 @@ For each `feature` of your application, make a branch, work on the branch, and t
 - Use [multer](https://github.com/expressjs/multer) for image upload 
 
 > NOTE: The above stretch goals are intended to be completed in order.
+
+- [ ] Update database content with better photos
+- [ ] Deploy to heroku
+- [ ] Add deployed link after completion
+- [ ] Add screenshot image
+- [ ] Add license
