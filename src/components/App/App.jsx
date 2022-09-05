@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'; // import react and use's
 import './App.css'; // import app.css file
 import GalleryList from '../GalleryList/GalleryList.jsx'; //import GalleryList component
+import GalleryForm from '../GalleryForm/GalleryForm.jsx';
 import Header from '../Header/Header'; // import Header component
 import Axios from 'axios'; //import axios for server routes
 import Container from '@mui/material/Container';
@@ -8,6 +9,9 @@ import Container from '@mui/material/Container';
 function App() {
   // getters and setters
   let [galleryArray, setGalleryArray] = useState([]);
+  let [galleryTitle, setGalleryTitle] = useState('');
+  let [galleryDescription, setGalleryDescription] = useState('');
+  let [galleryPath, setGalleryPath] = useState('');
 
   // useEffect runs on page load
   useEffect(() => {
@@ -56,10 +60,35 @@ function App() {
     });
   };
 
+  const addGalleryItem = (event) => {
+    // prevents default form behavior that refreshes the screen
+    event.preventDefault();
+    Axios({
+      method: 'POST',
+      url: '/gallery',
+      data: {
+        title: galleryTitle,
+        description: galleryDescription,
+        path: galleryPath,
+      }
+    }).then(response => {
+      // clear form inputs
+      setGalleryTitle('');
+      setGalleryDescription('');
+      setGalleryPath('');
+      // get gallery from server
+      getGallery();
+    }).catch(error => {
+      console.log(error);
+      alert('Something went wrong!');
+    });
+  };
+
   return (
     <Container className="App">
       {/* Insert Header component */}
       <Header />
+      <GalleryForm addGalleryItem={addGalleryItem} galleryTitle={galleryTitle} setGalleryTitle={setGalleryTitle} galleryDescription={galleryDescription} setGalleryDescription={setGalleryDescription} galleryPath={galleryPath} setGalleryPath={setGalleryPath}/>
       {/* Insert GalleryList component and pass galleryArray props */}
       <GalleryList deleteGalleryItem={deleteGalleryItem} galleryArray={galleryArray} likeGalleryObject={likeGalleryObject} />
     </Container>
