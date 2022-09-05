@@ -8,6 +8,9 @@ import Container from '@mui/material/Container';
 function App() {
   // getters and setters
   let [galleryArray, setGalleryArray] = useState([]);
+  let [galleryTitle, setGalleryTitle] = useState('');
+  let [galleryDescription, setGalleryDescription] = useState('');
+  let [galleryPath, setGalleryPath] = useState('');
 
   // useEffect runs on page load
   useEffect(() => {
@@ -56,19 +59,43 @@ function App() {
     });
   };
 
+  const addGalleryItem = (event) => {
+    // prevents default form behavior that refreshes the screen
+    event.preventDefault();
+    Axios({
+      method: 'POST',
+      url: '/gallery',
+      data: {
+        title: galleryTitle,
+        description: galleryDescription,
+        path: galleryPath,
+      }
+    }).then(response => {
+      // clear form inputs
+      setGalleryTitle('');
+      setGalleryDescription('');
+      setGalleryPath('');
+      // get gallery from server
+      getGallery();
+    }).catch(error => {
+      console.log(error);
+      alert('Something went wrong!');
+    });
+  };
+
   return (
     <Container className="App">
       {/* Insert Header component */}
       <Header />
-      <form>
+      <form onSubmit={addGalleryItem}>
         <label htmlFor="title">Title</label>
-        <input required id="title" type="text" />
+        <input required id="title" value={galleryTitle} onChange={(event) => setGalleryTitle(event.target.value)} />
 
         <label htmlFor="description">Description</label>
-        <input required id='description' type="text" />
+        <input required id='description' value={galleryDescription} onChange={(event) => setGalleryDescription(event.target.value)} />
 
         <label htmlFor="path">Image URL</label>
-        <input required id='path' type="text" />
+        <input required id='path' value={galleryPath} onChange={(event) => setGalleryPath(event.target.value)} />
 
         <button type='submit'>Submit</button>
       </form>
