@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'; // import react and use's
 import './App.css'; // import app.css file
 import GalleryList from '../GalleryList/GalleryList.jsx'; //import GalleryList component
+import GalleryForm from '../GalleryForm/GalleryForm.jsx';
 import Header from '../Header/Header'; // import Header component
 import Axios from 'axios'; //import axios for server routes
 import Container from '@mui/material/Container';
@@ -87,6 +88,7 @@ function App() {
     <Container className="App">
       {/* Insert Header component */}
       <Header />
+      <GalleryForm />
       <form onSubmit={addGalleryItem}>
         <label htmlFor="title">Title</label>
         <input required id="title" value={galleryTitle} onChange={(event) => setGalleryTitle(event.target.value)} />
