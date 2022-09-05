@@ -5,7 +5,7 @@ CREATE TABLE "gallery" (
 	"title" varchar(50),
 	"description" varchar(255),
 	"path" varchar(255),
-	"likes" integer
+	"likes" integer DEFAULT 0
 );
 
 INSERT INTO "gallery" ("title", "description", "path", "likes")
