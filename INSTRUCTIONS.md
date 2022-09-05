@@ -74,7 +74,7 @@ For each `feature` of your application, make a branch, work on the branch, and t
 > NOTE: The above stretch goals are intended to be completed in order.
 
 - [X] Update database content with better photos
-- [ ] Deploy to heroku
-- [ ] Add deployed link after completion
+- [X] Deploy to heroku
+- [X] Add deployed link after completion
 - [X] Add screenshot image
 - [X] Add license

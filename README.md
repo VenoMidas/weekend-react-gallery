@@ -1,3 +1,6 @@
+<!-- Badges -->
+![image](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
+
 # React Gallery
 
 ## Description
@@ -5,6 +8,8 @@
 _Duration: 2 Weeks_
 
 A gallery to display images of my life!
+
+[Deployed version of app](https://aqueous-atoll-99248.herokuapp.com/)
 
 ## Screenshot
 
