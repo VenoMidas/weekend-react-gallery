@@ -20,7 +20,7 @@ function GalleryItem({ galleryObject, likeGalleryObject, deleteGalleryItem }) {
     return (
         <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
             {/* clicking on the list item changes the toggle value, which then changes the displayed content */}
-            <Card sx={{ borderRadius: '10%' }} elevation="3">
+            <Card sx={{ borderRadius: '10%' }} elevation={3}>
                 <div
                     onClick={() => setToggle(!toggle)}
                     className="cardContent"
