@@ -88,19 +88,7 @@ function App() {
     <Container className="App">
       {/* Insert Header component */}
       <Header />
-      <GalleryForm />
-      <form onSubmit={addGalleryItem}>
-        <label htmlFor="title">Title</label>
-        <input required id="title" value={galleryTitle} onChange={(event) => setGalleryTitle(event.target.value)} />
-
-        <label htmlFor="description">Description</label>
-        <input required id='description' value={galleryDescription} onChange={(event) => setGalleryDescription(event.target.value)} />
-
-        <label htmlFor="path">Image URL</label>
-        <input required id='path' value={galleryPath} onChange={(event) => setGalleryPath(event.target.value)} />
-
-        <button type='submit'>Submit</button>
-      </form>
+      <GalleryForm addGalleryItem={addGalleryItem} galleryTitle={galleryTitle} setGalleryTitle={setGalleryTitle} galleryDescription={galleryDescription} setGalleryDescription={setGalleryDescription} galleryPath={galleryPath} setGalleryPath={setGalleryPath}/>
       {/* Insert GalleryList component and pass galleryArray props */}
       <GalleryList deleteGalleryItem={deleteGalleryItem} galleryArray={galleryArray} likeGalleryObject={likeGalleryObject} />
     </Container>
